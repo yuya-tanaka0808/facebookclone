@@ -14,7 +14,7 @@ class FeedsController < ApplicationController
 
   # GET /feeds/new
   def new
-    if paramas[:back]
+    if params[:back]
       @feed = Feed.new(feed_params)
     else
       @feed = Feed.new
@@ -66,7 +66,7 @@ class FeedsController < ApplicationController
   end
 
   def confirm
-    @feed = Feed.new(feed_params[:id])
+    @feed = Feed.new(feed_params)
   end
 
   private
