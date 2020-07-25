@@ -1,0 +1,25 @@
+<%= form_with(model: @blog,local: true, url: confirm_blogs_path) do |form| %>
+  <% if @blog.errors.any? %>
+    <div class="error_expelanation">
+      <h2><%= @blog.errors.count %>件のエラーがあります。</h2>
+      <ul>
+        <% @blog.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <table>
+    <tr>
+      <th class="title">タイトル</th>
+      <td class="content"><%= form.text_field :title %></td>
+    </tr>
+    <tr>
+      <th class="title">内容</th>
+      <br>
+      <td class="content"><%= form.text_field :content %></td>
+    </tr>
+  </table>
+   <%= form.submit "新しく投稿する" %>
+<% end %>
+<%= link_to "一覧へもどる", blogs_path %>
