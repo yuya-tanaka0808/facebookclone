@@ -11,11 +11,11 @@
   <% end %>
   <table>
     <tr>
-      <th class="title">タイトル</th>
-      <td class="content"><%= form.text_field :title %></td>
+      <th class="title"><%= form.label :"タイトル" %></th>
+      <td class="title"><%= form.text_field :title %></td>
     </tr>
     <tr>
-      <th class="title">内容</th>
+      <th class="content"><%= form.label :"内容" %></th>
       <br>
       <td class="content"><%= form.text_field :content %></td>
     </tr>

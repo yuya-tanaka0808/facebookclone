@@ -1,0 +1,18 @@
+<% @blog.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+<% end %>
+<p><%= notice %></p>
+<%= form_with(model: @blog, local:true) do |form| %>
+  <div class="blog_title">
+    <%= form.label :"タイトル" %>
+    <%= form.text_field :title %>
+  </div>
+  <br>
+  <div class="blog_content">
+    <%= form.label :"内容" %>
+    <%= form.text_field :content %>
+  </div>
+  <br>
+  <%= form.submit "編集する" %>
+<% end %>
+<%= link_to "一覧", blogs_path %>

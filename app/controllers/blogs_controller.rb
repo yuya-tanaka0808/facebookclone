@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
   before_action :find_blog, only:[:show, :edit, :update, :destroy]
 def index
-  @blog = Blog.all
+  @blogs = Blog.all
 end
 def show
 end
@@ -39,7 +39,7 @@ def confirm
 end
 private
 def blog_params
-  params.require(:blog).permit(:content)
+  params.require(:blog).permit(:title,:content)
 end
 def find_blog
   @blog = Blog.find(params[:id])
