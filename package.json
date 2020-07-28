@@ -1,5 +1,13 @@
 {
-  "name": "meetbook",
+  "name": "yarn",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "3",
+    "jquery": "^3.5.1"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:yuya-tanaka0808/facebookclone.git",
+  "author": "yuya tanaka <yuya.tanaka0808.w@gmail.com>",
+  "license": "MIT"
 }
