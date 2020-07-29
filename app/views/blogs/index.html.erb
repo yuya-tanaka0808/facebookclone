@@ -11,7 +11,7 @@
   <tr>
     <td class= "title"><%= blog.title %></td>
     <td class= "content"><%= blog.content %></td>
-    <td class= "created_at"><%= l blog.created_at, format: :short%></td>
+    <td class= "created_at"><%= l(blog.created_at, format: :short)%></td>
     <td><%= link_to '詳細', blog_path(blog.id) %></td>
     <td><%= link_to "編集する", edit_blog_path(blog.id) %></td>
     <td><%= link_to '削除する', blog_path(blog.id), method: :delete, data: { confirm: '本当に削除してもいいですか？' }%></td>

@@ -17,8 +17,12 @@
     <%= form.file_field :image %>
     <%= form.hidden_field :image_cache %>
   </div>
+  <div class="field">
+    
+    <%= feed.user_id %>
+  </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Upload Picture" %>
   </div>
 <% end %>
