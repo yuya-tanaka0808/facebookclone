@@ -11,15 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="image">
     <%= form.label :image %>
-    <%= image_tag(@feed.image.url) if @feed.image && @feed.image.url %>
+    <%= image_tag(@feed.image.url)if @feed.image && @feed.image.url %>
     <%= form.file_field :image %>
     <%= form.hidden_field :image_cache %>
   </div>
   <div class="field">
-    
-    <%= feed.user_id %>
+
+    <% feed.user_id %>
   </div>
 
   <div class="actions">
