@@ -11,6 +11,18 @@
     </div>
   <% end %>
 
+  <table>
+    <tr>
+      <th class="title"><%= form.label :"タイトル" %></th>
+      <td class="title"><%= form.text_field :title %></td>
+    </tr>
+    <tr>
+      <th class="content"><%= form.label :"内容" %></th>
+      <br>
+      <td class="content"><%= form.text_field :content %></td>
+    </tr>
+  </table>
+
   <div class="image">
     <%= form.label :image %>
     <%= image_tag(@feed.image.url)if @feed.image && @feed.image.url %>
@@ -23,6 +35,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit "Upload Picture" %>
+    <%= form.submit "投稿する" %>
   </div>
 <% end %>

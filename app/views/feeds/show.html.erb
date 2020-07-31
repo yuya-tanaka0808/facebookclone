@@ -1,9 +1,13 @@
+<h1>詳細画面</h1>
 <p id="notice"><%= notice %></p>
+<p>タイトル：<%= @feed.title %></p>
+<p>内容: <%= @feed.content %></p>
 
 <p>
   <strong>Image:</strong>
   <%= image_tag @feed.image.url %>
 </p>
 
-<%= link_to 'Edit', edit_feed_path(@feed) %> |
-<%= link_to 'Back', feeds_path %>
+<%= link_to '編集', edit_feed_path(@feed) %> |
+<%= link_to '削除', feeds_path, method: :delete, data: { confirm: '本当に削除してもいいですか？' } %> |
+<%= link_to '一覧へ戻る', feeds_path%>

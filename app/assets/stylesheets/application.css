@@ -14,6 +14,18 @@
  *= require_tree .
  *= require_self
  */
+html,body{
+  height: 100%;
+}
+
+ .container{
+   width: 100%;
+   position: relative;
+   min-height: 100%;
+ }
+ .inner{
+   padding-bottom: 50px;
+ }
 
  .navbar {
    background-color: #4267b2;
@@ -45,12 +57,16 @@
    margin:auto;
    text-align: center;
  }
+.push{
+  height: 100px;
+}
  footer {
    width:100%;
    background-color: #4267b2;
-   color: white;
+   color:white;
    text-align: center;
    margin: auto;
+   height: 50px;
    position: absolute;
    bottom: 0;
  }
