@@ -1,6 +1,9 @@
 class FeedsController < ApplicationController
   before_action :set_feed, only: [:show, :edit, :update, :destroy]
-
+  before_action :current_user
+  before_action :authenticate_user
+  before_action :logged_in?
+  before_action :check_user, only: [:edit,:update,:destroy]
   # GET /feeds
   # GET /feeds.json
   def index
@@ -31,7 +34,7 @@ class FeedsController < ApplicationController
     @feed = current_user.feeds.build(feed_params)
     respond_to do |format|
       if @feed.save
-        format.html { redirect_to @feed, notice: '投稿しました！' }
+        format.html { redirect_to feeds_path, notice: '投稿しました！' }
         format.json { render :show, status: :created, location: @feed }
       else
         format.html { render :new }
@@ -69,14 +72,17 @@ class FeedsController < ApplicationController
     render :new if @feed.invalid?
   end
 
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_feed
-      @feed = Feed.find(params[:id])
+    @feed = Feed.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def feed_params
-      params.require(:feed).permit(:image, :image_cache,:user_id,:title,:content)
+    params.require(:feed).permit(:image, :image_cache,:user_id,:title,:content)
     end
+
 end

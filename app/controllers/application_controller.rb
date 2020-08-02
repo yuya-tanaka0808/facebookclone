@@ -7,4 +7,10 @@ class ApplicationController < ActionController::Base
       redirect_to new_session_path
     end
   end
+  def check_user
+    if current_user.id != @feed.user.id
+      flash[:notice] = "権限がありません"
+      redirect_to feeds_path
+    end
+  end
 end
