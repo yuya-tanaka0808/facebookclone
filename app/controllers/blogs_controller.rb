@@ -37,11 +37,12 @@ def confirm
  @blog = Blog.new(blog_params)
  render :new if @blog.invalid?
 end
+
 private
 def blog_params
-params.require(:blog).permit(:title,:content)
+  params.require(:blog).permit(:title,:content)
 end
 def find_blog
-@blog = Blog.find(params[:id])
+  @blog = Blog.find(params[:id])
 end
 end
