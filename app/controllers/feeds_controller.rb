@@ -69,6 +69,7 @@ class FeedsController < ApplicationController
 
   def confirm
     @feed = current_user.feeds.build(feed_params)
+    @feed.id = params[:id]
     render :new if @feed.invalid?
   end
 
@@ -82,7 +83,7 @@ class FeedsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
   def feed_params
-    params.require(:feed).permit(:image, :image_cache,:user_id,:title,:content)
+    params.require(:feed).permit(:id, :image, :image_cache,:user_id,:title,:content)
   end
 
 end
